@@ -1,5 +1,7 @@
 import Head from 'next/head'
+import Avatar from '../components/Avatar'
 import styles from '../styles/Home.module.css'
+// import profilePic from '../public/images/my_faceshot.JPG'
 
 export default function Home() {
   return (
@@ -25,8 +27,9 @@ export default function Home() {
 
             {/* Icon */}
 
-            {/* Avatar */}
 
+            {/* Avatar */}
+            <Avatar />
           </div>
       </header>
 
