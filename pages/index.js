@@ -1,7 +1,9 @@
-import Head from 'next/head'
-import Avatar from '../components/Avatar'
-import styles from '../styles/Home.module.css'
-// import profilePic from '../public/images/my_faceshot.JPG'
+import Head from 'next/head';
+import Avatar from '../components/Avatar';
+import styles from '../styles/Home.module.css';
+import { ViewGridIcon, MicrophoneIcon } from '@heroicons/react/solid';
+import { SearchIcon } from '@heroicons/react/outline';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -26,15 +28,34 @@ export default function Home() {
             <p className='link'>Images</p>
 
             {/* Icon */}
+            <ViewGridIcon className='h-10 w-10 p-2 rounded-full hover:bg-gray-100 cursor-pointer' />
 
 
             {/* Avatar */}
-            <Avatar />
+            <Avatar url='https://avatars.githubusercontent.com/u/92869311?v=4' />
           </div>
       </header>
 
       {/* Body */}
+      <form className='flex flex-col items-center align-middle'>
+        <Image
+          src='https://cdn.vox-cdn.com/thumbor/Pkmq1nm3skO0-j693JTMd7RL0Zk=/0x0:2012x1341/1200x800/filters:focal(0x0:2012x1341)/cdn.vox-cdn.com/uploads/chorus_image/image/47070706/google2.0.0.jpg'
+          width={360}
+          height={200}
+          alt='Google logo'
+        />
+        <div className='flex w-full mt-4 hover:shadow-lg focus-within:shadow-lg max-w-md rounded-full border-gray-200 px-5 py-3 items-center sm:max-w-xl lg:max-w-2xl'>
+          <SearchIcon className='h-5 mr-3 text-gray-500' />
+          <input type='text' className='focus: outline-none flex-grow' />
+          <MicrophoneIcon className='h-5' />
+        </div>
  
+        <div className='flex flex-col w-1/2 space-y-2 justify-center mt-8 sm:space-y-0 sm:flex-row sm:space-x-4'>
+          <button className='btn'>Google Search</button>
+          <button className='btn'>I'm feeling lucky</button>
+        </div>
+      </form>
+
       {/* Footer */}
     </div>
   )
